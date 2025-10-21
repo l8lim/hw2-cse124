@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experiments</title>
+  <style>
+    /* Only a simple border for base page structure (within the assignment rules). */
+    main { border: 2px solid #000; padding: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Experiments</h1>
+    <nav>
+      <a href="index.html">About</a> ·
+      <a href="projects.html">Projects</a> ·
+      <a href="experiments.html" aria-current="page">Experiments</a> ·
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>&lt;template&gt;</h2>
+      <p>The template below is part of the DOM but not rendered, satisfying the no-JS rule.</p>
+      <template id="card-template">
+        <article>
+          <h3>Hidden Card Title</h3>
+          <p>This lives inside a &lt;template&gt; and stays inert until scripted.</p>
+        </article>
+      </template>
+      <p><em>Visible comparison card:</em></p>
+      <article>
+        <h3>Visible Card Title</h3>
+        <p>This is a normal element shown for comparison with the template content.</p>
+      </article>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>&lt;picture&gt; with &lt;source&gt;</h2>
+      <p>The image below swaps sources based on viewport width; the final &lt;img&gt; is the fallback.</p>
+      <picture>
+        <source srcset="images/mountain-1200.jpg" media="(min-width: 900px)" type="image/jpeg" />
+        <source srcset="images/mountain-600.jpg" media="(min-width: 480px)" type="image/jpeg" />
+        <img src="images/mountain-320.jpg" alt="Mountain landscape at sunrise" width="320" height="213" />
+      </picture>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>&lt;audio&gt; with &lt;source&gt;</h2>
+      <p>Multiple formats improve compatibility; text provides accessible fallback.</p>
+      <audio controls preload="metadata">
+        <source src="media/sample.mp3" type="audio/mpeg" />
+        <source src="media/sample.ogg" type="audio/ogg" />
+        Your browser does not support the audio element. You can <a href="media/sample.mp3">download the MP3</a>.
+      </audio>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>&lt;video&gt; with &lt;source&gt;</h2>
+      <p>Poster is shown before playback; multiple sources provide fallbacks.</p>
+      <video controls preload="metadata" width="640" height="360" poster="media/poster.jpg">
+        <source src="media/sample.mp4" type="video/mp4" />
+        <source src="media/sample.webm" type="video/webm" />
+        Your browser does not support the video tag. You can <a href="media/sample.mp4">download the MP4</a>.
+      </video>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>&lt;canvas&gt;</h2>
+      <p>The canvas element is present with width/height and accessible fallback text. (No JS drawing used.)</p>
+      <canvas id="demoCanvas" width="320" height="180" style="border:1px solid #000;">
+        Your browser does not support HTML5 canvas.
+      </canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Deployed in the same Netlify site. Test at <code>/experiments.html</code>.</p>
+  </footer>
+</body>
+</html>
